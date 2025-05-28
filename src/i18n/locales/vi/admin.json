@@ -1,0 +1,60 @@
+{
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "totalUsers": "Tổng số người dùng",
+    "activeUsers": "Người dùng đang hoạt động",
+    "totalPosts": "Tổng số bài viết",
+    "recentActivity": "Hoạt động gần đây"
+  },
+  "users": {
+    "title": "Quản lý người dùng",
+    "search": "Tìm kiếm người dùng...",
+    "name": "Tên",
+    "email": "Email",
+    "role": "Vai trò",
+    "status": "Trạng thái",
+    "actions": "Thao tác",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "noUsers": "Không tìm thấy người dùng",
+    "admin": "Quản trị viên",
+    "user": "Người dùng",
+    "active": "Đang hoạt động",
+    "inactive": "Không hoạt động"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "save": "Lưu thay đổi",
+    "general": {
+      "title": "Cài đặt chung",
+      "siteName": "Tên trang web",
+      "siteDescription": "Mô tả trang web",
+      "maintenanceMode": "Chế độ bảo trì"
+    },
+    "system": {
+      "title": "Cài đặt hệ thống",
+      "allowRegistration": "Cho phép đăng ký người dùng",
+      "defaultLanguage": "Ngôn ngữ mặc định",
+      "timezone": "Múi giờ"
+    },
+    "notifications": {
+      "title": "Cài đặt thông báo",
+      "emailNotifications": "Thông báo qua email",
+      "adminNotifications": "Thông báo cho quản trị viên"
+    },
+    "upload": {
+      "title": "Cài đặt tải lên",
+      "maxFileSize": "Kích thước tệp tối đa (MB)",
+      "allowedTypes": "Loại tệp được phép"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Bảng điều khiển",
+    "users": "Người dùng",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất"
+  },
+  "header": {
+    "profile": "Mở menu người dùng"
+  }
+} 

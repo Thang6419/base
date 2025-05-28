@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu"
+  },
+  "footer": {
+    "copyright": "© 2024 Công ty của bạn. Bảo lưu mọi quyền."
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "logout": "Đăng xuất",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "name": "Tên",
+    "passwordsDoNotMatch": "Mật khẩu không khớp",
+    "registrationFailed": "Đăng ký thất bại",
+    "alreadyHaveAccount": "Đã có tài khoản?",
+    "dontHaveAccount": "Chưa có tài khoản?"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống"
+  }
+} 

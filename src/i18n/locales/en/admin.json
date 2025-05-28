@@ -1,0 +1,60 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "totalUsers": "Total Users",
+    "activeUsers": "Active Users",
+    "totalPosts": "Total Posts",
+    "recentActivity": "Recent Activity"
+  },
+  "users": {
+    "title": "Users",
+    "search": "Search users...",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "status": "Status",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "noUsers": "No users found",
+    "admin": "Admin",
+    "user": "User",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "settings": {
+    "title": "Settings",
+    "save": "Save Changes",
+    "general": {
+      "title": "General Settings",
+      "siteName": "Site Name",
+      "siteDescription": "Site Description",
+      "maintenanceMode": "Maintenance Mode"
+    },
+    "system": {
+      "title": "System Settings",
+      "allowRegistration": "Allow User Registration",
+      "defaultLanguage": "Default Language",
+      "timezone": "Timezone"
+    },
+    "notifications": {
+      "title": "Notification Settings",
+      "emailNotifications": "Email Notifications",
+      "adminNotifications": "Admin Notifications"
+    },
+    "upload": {
+      "title": "Upload Settings",
+      "maxFileSize": "Maximum File Size (MB)",
+      "allowedTypes": "Allowed File Types"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "header": {
+    "profile": "Open user menu"
+  }
+} 
