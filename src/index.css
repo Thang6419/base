@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
@@ -9,8 +10,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --abc: #fff;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
+.dark {
+  --abc: #888;
+}
+.abc {
+  background-color: var(--abc);
+}
 body {
   margin: 0;
   min-width: 320px;
@@ -28,4 +38,9 @@ body {
   button {
     background-color: #f9f9f9;
   }
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
