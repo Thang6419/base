@@ -1,12 +1,14 @@
 import MacScrollbar from '@/components/common/MacScrollBar';
+import { SpinnerLoading } from '@/components/loadings';
 import { supportedLanguages } from '@i18n/config';
 import { useI18n } from '@i18n/hooks';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
-import { ScrollRestoration } from 'react-router';
+import { ScrollRestoration, useLocation } from 'react-router';
 import { Link, Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
+  const location = useLocation();
   const { t, changeLanguage } = useI18n('common');
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -130,7 +132,9 @@ const MainLayout = () => {
       <MacScrollbar>
         <div className="min-h-screen flex flex-col bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
           <main className="flex-1 container mx-auto px-4 py-8">
-            <Outlet />
+            <Suspense fallback={<SpinnerLoading />} key={location.key}>
+              <Outlet />
+            </Suspense>
           </main>
           <footer className="bg-gray-100 dark:bg-gray-900 py-8 mt-auto w-full">
             <div className="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">

@@ -1,86 +1,81 @@
-import React, { Suspense, lazy } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { ErrorBoundary } from '@components/errors'
-import { SpinnerLoading } from '@components/loadings'
-import ProtectedRoute from '@components/auth/ProtectedRoute'
-import store from './store'
-
-// Lazy load components
-const lazyLoad = (children) => (
-  <Suspense fallback={<SpinnerLoading />}>
-    {children}
-  </Suspense>
-)
+import ProtectedRoute from '@components/auth/ProtectedRoute';
+import { ErrorBoundary } from '@components/errors';
+import { SpinnerLoading } from '@components/loadings';
+import { lazy, Suspense } from 'react';
+import { Provider } from 'react-redux';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import store from './store';
 
 // Layouts
-const MainLayout = lazy(() => import('@components/layouts/main'))
-const AdminLayout = lazy(() => import('@components/layouts/admin'))
+const MainLayout = lazy(() => import('@components/layouts/main'));
+const AdminLayout = lazy(() => import('@components/layouts/admin'));
 
 // Pages
-const Home = lazy(() => import('@pages/Home'))
-const About = lazy(() => import('@pages/About'))
-const Login = lazy(() => import('@pages/auth/Login'))
-const Register = lazy(() => import('@pages/auth/Register'))
-const Dashboard = lazy(() => import('@pages/admin/Dashboard'))
-const Users = lazy(() => import('@pages/admin/Users'))
-const Settings = lazy(() => import('@pages/admin/Settings'))
+const Home = lazy(() => import('@pages/Home'));
+const About = lazy(() => import('@pages/About'));
+const Login = lazy(() => import('@pages/auth/Login'));
+const Register = lazy(() => import('@pages/auth/Register'));
+const Dashboard = lazy(() => import('@pages/admin/Dashboard'));
+const Users = lazy(() => import('@pages/admin/Users'));
+const Settings = lazy(() => import('@pages/admin/Settings'));
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: lazyLoad(<MainLayout />),
+    element: <MainLayout />,
     errorElement: <ErrorBoundary />,
     children: [
       {
         index: true,
-        element: lazyLoad(<Home />)
+        element: <Home />,
       },
       {
         path: 'about',
-        element: lazyLoad(<About />)
+        element: <About />,
       },
       {
         path: 'login',
-        element: lazyLoad(<Login />)
+        element: <Login />,
       },
       {
         path: 'register',
-        element: lazyLoad(<Register />)
-      }
-    ]
+        element: <Register />,
+      },
+    ],
   },
   {
     path: '/admin',
     element: (
       <ProtectedRoute>
-        {lazyLoad(<AdminLayout />)}
+        <AdminLayout />
       </ProtectedRoute>
     ),
     errorElement: <ErrorBoundary />,
     children: [
       {
         index: true,
-        element: lazyLoad(<Dashboard />)
+        element: <Dashboard />,
       },
       {
         path: 'users',
-        element: lazyLoad(<Users />)
+        element: <Users />,
       },
       {
         path: 'settings',
-        element: lazyLoad(<Settings />)
-      }
-    ]
-  }
-])
+        element: <Settings />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <Suspense fallback={<SpinnerLoading />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;
